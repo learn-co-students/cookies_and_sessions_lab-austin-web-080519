@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
     end
 
     def add
-        @item = params.permit(:item).values[0]
+        @product = params.permit(:product).values[0]
         cart = session[:cart] || []
-        cart << @item
+        cart << @product
         session[:cart] = cart
         redirect_to products_path
     end
